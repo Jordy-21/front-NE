@@ -1,0 +1,44 @@
+<!--/Banner-inner-pages-->
+<div class="inner-banner">
+    <section class="w3l-breadcrumb text-left">
+      <div class="container">
+        <ul class="breadcrumbs-custom-path">
+          <li><a href="#">Home</a></li>
+          <li class="active"><span class="fas fa-chevron-right mx-2" aria-hidden="true"></span> Pago</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+<!--//Banner-inner-pages-->
+ <!--/contact1-->
+    <section class="w3l-contact-1 py-3" id="contact">
+        <div class="contacts-9 py-lg-3 py-md-2">
+            <div class="container">
+                <div class="row contact-view">
+                    <div class="col-lg-6 map-content-9">
+                        <h5 class="mb-sm-4 mb-3 text-center">Realizar Pago</h5>
+                        <p class="mb-sm-3 mb-3">Rellene el siguiente formulario para pagar por favor.</p>
+                        <form [formGroup]="register" (ngSubmit)="onSubmit()" method="post">
+                            <div class="twice">
+                                <input type="text" class="form-control" formControlName="tarjeta"  
+                                    placeholder="Tarjeta" required="">
+                            </div>
+                            <div class="twice">
+                                <input type="password" class="form-control" formControlName="cvv"  
+                                    placeholder="CVV" required="">
+                            </div>
+                            <div class="twice">
+                                <input type="text" class="form-control" formControlName="monto"  
+                                    placeholder="Monto" required="">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-style mt-4">Pagar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--/contact1-->
+<!--//contact-block -->

@@ -1,0 +1,17 @@
+.search-right {
+    display: inline-block;
+    position: relative;
+   }
+   
+   .carrito-counter {
+    position: absolute;
+    top: -2px;
+    right: -8px;
+    font-size: 12px;
+    background-color: rgb(188, 11, 11);
+    color: white;
+    padding: 1px 5px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+   }

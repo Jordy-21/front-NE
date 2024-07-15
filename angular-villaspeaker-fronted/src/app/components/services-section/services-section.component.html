@@ -1,0 +1,143 @@
+<section class="w3l-courses" id="blog">
+    <div class="blog py-5" id="courses">
+        <div class="container py-lg-5">
+            <div class="text11-content grid-colunm-2">
+                <div class="single-left">
+                    <div class="row pb-4 blog-page-grids d-flex">
+
+                        <!-- Aqui va el for de productos -->
+                        @for (producto of productos; track producto.id) {
+                            <div class="col-lg-6 blogw3-grid mb-4">
+                                <div class="card h-100 align-items-stretch">
+                                    <div class="card-header p-0 position-relative">
+                                        <a href="blog-single.html" class="zoom d-block">
+                                            <img class="card-img-bottom d-block" src="assets/images/{{producto.foto}}" alt="Card image cap">
+                                        </a>
+                                    </div>
+                                    <div class="card-body course-details">
+                                        <a href="blog-single.html" class="course-desc">{{producto.nombre}}
+                                        </a>
+                                        <p class="mt-3">{{producto.descripcion}} </p>
+                                        <div class="blog-bottom-info">
+    
+                                            <div class="course-meta">
+                                                <div class="meta-item course-lesson">
+                                                    <span class="fas fa-heart"></span>
+                                                    <span class="meta-value"> {{producto.stock}} </span>
+                                                </div>
+                                                <div class="meta-item course-students">
+                                                    <span class="fas fa-eye"></span>
+                                                    <span class="meta-value"> {{producto.precio}} </span>
+                                                </div>
+                                                <div class="meta-item course-students">
+                                                    <span class="fas fa-calendar-week"></span>  
+                                                    <span class="meta-value"> {{producto.idCategoria}} </span>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-primary btn-style mt-4" (click)="validate()">Añadir a Carrito</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+                        <ul class="page-pagination">
+                            <li><span aria-current="page" class="page-numbers current">1</span></li>
+                            <li><a class="page-numbers" href="#url">2</a></li>
+                            <li><a class="page-numbers" href="#url">3</a></li>
+                            <li><a class="page-numbers" href="#url">...</a></li>
+                            <li><a class="page-numbers" href="#url">15</a></li>
+                            <li><a class="next" href="#url">Siguiente <span class="fa fa-angle-right"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- right side bar -->
+                <div class="right-side-bar mt-lg-0 mt-5">
+
+                    <aside class="posts">
+                        <h3 class="aside-title">Categorias</h3>
+                        <ul class="category">
+
+                            @for (categoria of categorias; track categoria.id) {
+                                <li><a href="#link" [routerLink]="['/services',categoria.id]"><span class="fas fa-angle-right"></span>{{categoria.nombre}}<label>
+                                    (11)</label></a></li>
+                            }
+
+                        </ul>
+                    </aside>
+                    <aside class="posts">
+                        <h3 class="aside-title">Recent Posts</h3>
+                        <div class="posts-grids">
+                            <div class="posts-grid-inner">
+                                <div class="posts-grid-left pr-0">
+                                    <a href="blog-single.html">
+                                        <img src="assets/images/audi3.jfif" alt=" " class="img-fluid radius-image">
+                                    </a>
+                                </div>
+                                <div class="posts-grid-right">
+                                    <h4>
+                                        <a href="blog-single.html" class="text-bl">Audifono Bluetooht Gold Plus.</a>
+                                    </h4>
+                                    <span class="price"> hace 11 minutos</span>
+                                </div>
+                            </div>
+                            <div class="posts-grid-inner my-4">
+                                <div class="posts-grid-left pr-0">
+                                    <a href="blog-single.html">
+                                        <img src="assets/images/audi4.jfif" alt=" " class="img-fluid radius-image">
+                                    </a>
+                                </div>
+                                <div class="posts-grid-right">
+                                    <h4>
+                                        <a href="blog-single.html" class="text-bl">Audifono Bluetooht Blue Ultra.</a>
+                                    </h4>
+                                    <span class="price"> hace 15 minutos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <aside class="posts">
+                        <h3 class="aside-title">Publicaciones de Instagram</h3>
+                        <div class="row posts-grid">
+                            <a href="#insta" class="col-4">
+                                <img src="assets/images/audi14.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+                            <a href="#insta" class="col-4">
+                                <img src="assets/images/audi15.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+                            <a href="#insta" class="col-4">
+                                <img src="assets/images/audi16.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+                            <a href="#insta" class="col-4 mt-3">
+                                <img src="assets/images/audi17.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+                            <a href="#insta" class="col-4 mt-3">
+                                <img src="assets/images/audi18.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+                            <a href="#insta" class="col-4 mt-3">
+                                <img src="assets/images/audi19.jfif" alt=" " class="img-fluid radius-image">
+                            </a>
+
+                        </div>
+                    </aside>
+                    <aside class="posts">
+                        <h3 class="aside-title">Etiquetas Populares</h3>
+                        <ul class="tags-list">
+                            <li><a href="#tag"> Radios</a></li>
+                            <li><a href="#tag"> Audifonos</a></li>
+                            <li><a href="#tag"> Cargadores</a></li>
+                            <li><a href="#tag"> Parlanes</a></li>
+                            <li><a href="#tag"> Equipos de Sonido</a></li>
+                            <li><a href="#tag"> Sonido</a></li>
+                            <li><a href="#tag"> Ofertas</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <!-- //right side bar -->
+            </div>
+        </div>
+    </div>
+</section>

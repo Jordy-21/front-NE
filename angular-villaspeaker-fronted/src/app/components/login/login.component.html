@@ -1,0 +1,59 @@
+<!--/Banner-inner-pages-->
+<div class="inner-banner">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="#">Inicio</a></li>
+                <li class="active"><span class="fas fa-chevron-right mx-2" aria-hidden="true"></span> Iniciar Sesion
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!--//Banner-inner-pages-->
+<!--/contact1-->
+<!--/login -->
+<section class="w3l-contact-1 py-5" id="login">
+    <div class="contacts-9 py-lg-5 py-md-4">
+        <div class="container">
+            <div class="row contact-view">
+                <div class="col-lg-7 cont-details mb-lg-0 mb-5 pr-lg-5 mr-5 map-content-9">
+                    <h6 class="title-subw3hny">Iniciar Sesion</h6>
+                    <h3 class="title-w3l mb-4">Login <span class="thin">de Usuario</span></h3>
+                    <p class="mb-sm-5 mb-4">Si ya tienes una cuenta, ingresa tu email y contraseña para poder ingresar y
+                        realizar pedidos.</p>
+                    <form [formGroup]="login" (ngSubmit)="onSubmit()" method="post">
+                        <div class="twice-two">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required
+                                formControlName="email">
+                            @if (login.get('email')?.touched && login.get('email')?.hasError('required')) {
+                            <span class="error-text">El correo electrónico es obligatorio.</span>
+                            }
+
+                            @if (login.get('email')?.touched && login.get('email')?.hasError('email')) {
+                            <span class="error-text">Por favor, ingresa un correo electrónico válido.</span>
+                            }
+
+                            <input type="password" class="form-control" name="Password" placeholder="Password" required
+                                formControlName="password">
+
+                            @if (login.get('password')?.touched && login.get('password')?.hasError('required')) {
+                            <span class="error-text">La contraseña es obligatoria.</span>
+                            }
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-style mt-4" [disabled]="!login.valid">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 map-content-9">
+                    <h5 class="mb-sm-4 mb-3">Eres Nuevo?</h5>
+                    <p>Puedes crear una cuenta desde el siguiente enlace, solo necesitaremos algunos datos y podras
+                        empezar a vivir esta fantastica experiencia. <a routerLink="/register">Registrare ahora</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/contact1-->
+<!--//contact-block -->

@@ -1,0 +1,101 @@
+<!--/Banner-inner-pages-->
+<div class="inner-banner">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="#">Home</a></li>
+                <li class="active"><span class="fas fa-chevron-right mx-2" aria-hidden="true"></span> Register</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!--//Banner-inner-pages-->
+<!--/contact1-->
+<section class="w3l-contact-1 py-3" id="contact">
+    <div class="contacts-9 py-lg-3 py-md-2">
+        <div class="container">
+            <div class="row contact-view">
+                <div class="col-lg-6 map-content-9">
+                    <h5 class="mb-sm-4 mb-3 text-center">Crear nueva cuenta</h5>
+                    <p class="mb-sm-3 mb-3">Rellene el siguiente formulario para iniciar sesion por favor.</p>
+                    <form [formGroup]="register" (ngSubmit)="onSubmit()" method="post">
+                        <div class="twice">
+                            <input type="text" class="form-control" formControlName="username" placeholder="Username"
+                                required="">
+
+                            @if (register.get('username')?.touched && register.get('username')?.hasError('required')) {
+                                <span class="error-text">El nombre de usuario es obligatorio.</span>
+                            }
+
+                            @if (register.get('username')?.touched && register.get('username')?.hasError('email')) {
+                                <span class="error-text">Por favor, ingresa un usuario válido.</span>
+                            }
+
+                        </div>
+                        <div class="twice">
+                            <input type="password" class="form-control" formControlName="password"
+                                placeholder="Password" required="">
+
+                            @if (register.get('password')?.touched && register.get('password')?.hasError('required')) {
+                                <span class="error-text">La contraseña es obligatoria.</span>
+                            }
+
+                            @if (register.get('password')?.touched && register.get('password')?.hasError('minlength')) {
+                                <span class="error-text">La contraseña debe tener al menos 6 caracteres.</span>
+                            }
+
+                        </div>
+                        <div class="twice">
+                            <input type="text" class="form-control" formControlName="lastname" placeholder="Apellidos"
+                                required="">
+
+                            @if (register.get('lastname')?.touched && register.get('lastname')?.hasError('required')) {
+                                    <span class="error-text">Los apellidos son obligatorios.</span>
+                            }
+                            
+                        </div>
+                        <div class="twice">
+                            <input type="text" class="form-control" formControlName="firstname" placeholder="Nombres"
+                                required="">
+
+                            @if (register.get('firstname')?.touched && register.get('firstname')?.hasError('required')) {
+                                    <span class="error-text">Los nombres son obligatorios.</span>
+                            }
+
+                        </div>
+                        <div class="twice">
+                            <input type="text" class="form-control" formControlName="dni" placeholder="Documento"
+                                required="">
+                                
+                            @if (register.get('dni')?.touched && register.get('dni')?.hasError('required')) {
+                                <span class="error-text">El dni es obligatorio.</span>
+                            }
+
+                            @if (register.get('dni')?.touched && register.get('dni')?.hasError('minlength')) {
+                                <span class="error-text">El dni debe tener minimo 8 caracteres.</span>
+                            }
+
+                            @if (register.get('dni')?.touched && register.get('dni')?.hasError('maxlength')) {
+                                <span class="error-text">El dni debe tener maximo 9 caracteres.</span>
+                            }
+                        </div>
+                        <div class="twice">
+                            <input type="text" class="form-control" formControlName="direccion" placeholder="Direccion"
+                                required="">
+
+                            @if (register.get('direccion')?.touched && register.get('direccion')?.hasError('required')) {
+                                <span class="error-text">La direccion es obligatoria.</span>
+                            }
+
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-style mt-4" [disabled]="!register.valid">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/contact1-->
+<!--//contact-block -->

@@ -1,0 +1,12 @@
+.contacts-9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .map-content-9 {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente el contenido dentro del div */
+  }
